@@ -1,15 +1,16 @@
-// @Lovable.dev/vite-tanstack-config already includes the following — do NOT add them manually
-// or the app will break with duplicate plugins.
-import { defineConfig } from "@Lovable.dev/vite-tanstack-config";
-import netlify from "@netlify/vite-plugin-tanstack-start";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
+import tsconfigPaths from "vite-tsconfig-paths";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  vite: {
-    plugins: [netlify()],
-  },
-
-  tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts
-    server: { entry: "server" },
-  },
+  plugins: [
+    TanStackRouterVite(),
+    tanstackStart(),
+    react(),
+    tsconfigPaths(),
+    tailwindcss(),
+  ],
 });

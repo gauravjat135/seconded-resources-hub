@@ -1,0 +1,46 @@
+# Roadmap
+
+- [x] Establish SecondEd design system and shared shell
+- [x] Add reusable marketplace components and demonstration data
+- [x] Build all public routes
+- [x] Build all student routes
+- [x] Build all admin routes
+- [x] Validate navigation, mobile layout, metadata, and preview health
+- [x] Complete the seven-section SecondEd home page
+- [x] Validate home page category links and responsive layouts
+- [x] Complete secure registration, login, recovery, and logout flows
+- [x] Protect student workspace pages and verify account-aware navigation
+- [x] Add isolated demo administrator login and session
+- [x] Complete admin navigation, Categories, logout, and presentation-flow verification
+- [x] Complete Browse Resources search, combined filters, sorting, and responsive states
+- [x] Apply the approved Professional Grid polish across public, student, and admin pages
+- [x] Verify all workflows at desktop, tablet, and mobile sizes
+- [x] Run full end-to-end reliability test across public, student, and admin journeys
+- [x] Fix confirmed functional, permission, persistence, and responsive defects
+- [x] Re-run desktop and mobile verification with clean diagnostics
+- [x] Add persistent device-aware Light and Dark Mode system
+- [x] Adapt shared navigation, surfaces, forms, overlays, and all routes to both themes
+- [x] Verify theme persistence, accessibility, and desktop/mobile presentation
+- [x] Add resource-card Contact Seller actions and owner-aware management
+- [x] Build the complete seller contact modal with listing-specific information
+- [x] Connect seller contact actions to messaging, email, and calling
+- [x] Verify contact flows, favorites independence, themes, and mobile layout
+- [x] Assign all demonstration listings evenly to the three fixed seller accounts
+- [x] Scope dashboard, profile, and My Listings to the authenticated owner
+- [x] Enforce owner-only listing mutations and seller-specific contact behavior
+- [ ] Verify authenticated switching across all three demonstration accounts — blocked: the third email is not registered, and test-session access for the existing accounts is unavailable
+- [x] Create distinct complete profiles for the three demonstration students
+- [x] Isolate favorites and messages by signed-in student
+- [x] Keep marketplace shared while scoping personal activity and statistics
+- [x] Verify seller details, profile defaults, and account-scoped store behavior
+- [x] Correct Dashboard sold totals to exclude reserved listings
+- [x] Re-test multi-user creation, ownership permissions, persistence, favorites, messages, and public seller display
+- [x] Make seller conversations reopen reliably by participant email after account switching
+- [x] Refresh seller details on existing listings after profile updates
+- [x] Keep card and details ownership state synchronized with login changes
+
+## Backend migration (complete)
+- Database tables created: listings, favorites, conversations, messages, reports; profiles extended with email/phone/location/avatar.
+- 28 demo listings seeded and split 10/9/9 across gauravjaat1335@gmail.com, kgfjaat1335@gmail.com, gauraviskgf@gmail.com.
+- Stores rewritten to read/write the database (listing-store, favorites-store, messages-store, reports-store); localStorage no longer used for app data.
+- Verified: create/refresh/edit/delete persistence, My Listings scoping, favourites persistence, contact-seller conversation storage, cross-account update/delete blocked by row level security.

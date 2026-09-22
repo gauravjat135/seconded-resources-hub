@@ -1,0 +1,6 @@
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { AuthForm } from "@/components/seconded/forms";
+import { supabase } from "@/integrations/supabase/client";
+export const Route=createFileRoute("/register")({head:()=>({meta:[{title:"Register — SecondEd"},{name:"description",content:"Create your SecondEd student marketplace account."},{property:"og:title",content:"Join SecondEd"},{property:"og:description",content:"Create an account for the college second-hand resource marketplace."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:RegisterPage});
+function RegisterPage(){const navigate=useNavigate();useEffect(()=>{supabase.auth.getUser().then(({data})=>{if(data.user)navigate({to:"/dashboard",replace:true})})},[navigate]);return <div className="page-container grid min-h-[760px] place-items-center py-10 sm:min-h-[820px] sm:py-14"><div className="surface-card w-full max-w-lg p-6 sm:p-8"><p className="eyebrow">Join the campus marketplace</p><h1 className="mt-2 font-display text-3xl font-extrabold">Create your account</h1><p className="mb-7 mt-2 text-sm leading-6 text-muted-foreground">Start giving useful college resources a second life.</p><AuthForm register/></div></div>}
